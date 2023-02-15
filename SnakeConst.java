@@ -28,4 +28,14 @@ public interface SnakeConst {
      * The default height of the game window.
      */
     public static final int DEFAULT_WINDOW_HEIGHT = 600;
+
+    /**
+     * Default media path.
+     */
+    public static final String MEDIA_PATH = "media\\";
+
+    /**
+     * Icon name.
+     */
+    public static final String ICON_NAME = "snakeicon.png";
 }
