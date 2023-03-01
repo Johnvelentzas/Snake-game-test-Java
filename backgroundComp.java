@@ -4,9 +4,9 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
-public class background extends JFrame implements component, SnakeConst{
+public class backgroundComp extends JFrame implements component, SnakeConst{
 
-    private Image tileImage = new ImageIcon(MEDIA_PATH + BACKGROUND_ICON_NAME).getImage().getScaledInstance(TILE_SIZE, TILE_SIZE, Image.SCALE_DEFAULT);
+    private Image tileImage = new ImageIcon(MEDIA_PATH + BACKGROUND_ICON_PATH).getImage().getScaledInstance(TILE_SIZE, TILE_SIZE, Image.SCALE_DEFAULT);
 
     @Override
     public void update() {

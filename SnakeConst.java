@@ -54,7 +54,57 @@ public interface SnakeConst {
     public static final String ICON_NAME = "snakeicon.png";
 
     /**
-     * Background icon name.
+     * Background icon path.
      */
-    public static final String BACKGROUND_ICON_NAME = "tile.png";
+    public static final String BACKGROUND_ICON_PATH = "tile.png";
+
+    /**
+     * Snake head looking up path.
+     */
+    public static final String SNAKE_HEAD_UP_PATH = "tile.png";
+
+    /**
+     * Snake head looking down path.
+     */
+    public static final String SNAKE_HEAD_DOWN_PATH = "tile.png";
+
+    /**
+     * Snake head looking left path.
+     */
+    public static final String SNAKE_HEAD_LEFT_PATH = "tile.png";
+
+    /**
+     * Snake head looking right path.
+     */
+    public static final String SNAKE_HEAD_RIGHT_PATH = "tile.png";
+
+    /**
+     * Snake body horizontal path.
+     */
+    public static final String SNAKE_BODY_HORIZONTAL_PATH = "tile.png";
+
+    /**
+     * Snake body vertical path.
+     */
+    public static final String SNAKE_BODY_VERTICAL_PATH = "tile.png";
+
+    /**
+     * Snake tail looking up path.
+     */
+    public static final String SNAKE_TAIL_UP_PATH = "tile.png";
+
+    /**
+     * Snake tail looking down path.
+     */
+    public static final String SNAKE_TAIL_DOWN_PATH = "tile.png";
+
+    /**
+     * Snake tail looking left path.
+     */
+    public static final String SNAKE_TAIL_LEFT_PATH = "tile.png";
+
+    /**
+     * Snake tail looking right path.
+     */
+    public static final String SNAKE_TAIL_RIGHT_PATH = "tile.png";
 }

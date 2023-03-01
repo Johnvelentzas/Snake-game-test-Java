@@ -14,7 +14,7 @@ public class snakeCanvas extends JPanel implements ActionListener, KeyListener, 
         this.setPreferredSize(new Dimension(CANVAS_WIDTH, CANVAS_HEIGHT));
         this.setBackground(Color.BLACK);
         this.setDoubleBuffered(true);
-        this.components.add(new background());
+        this.components.add(new backgroundComp());
     }
 
     public void start(){
