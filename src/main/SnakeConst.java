@@ -1,3 +1,4 @@
+package main;
 /**
  * Some constants to controll the snake aplication.
  */
@@ -61,50 +62,72 @@ public interface SnakeConst {
     /**
      * Snake head looking up path.
      */
-    public static final String SNAKE_HEAD_UP_PATH = "tile.png";
+    public static final String SNAKE_HEAD_UP_PATH = "snakeheadup.png";
 
     /**
      * Snake head looking down path.
      */
-    public static final String SNAKE_HEAD_DOWN_PATH = "tile.png";
+    public static final String SNAKE_HEAD_DOWN_PATH = "snakeheaddown.png";
 
     /**
      * Snake head looking left path.
      */
-    public static final String SNAKE_HEAD_LEFT_PATH = "tile.png";
+    public static final String SNAKE_HEAD_LEFT_PATH = "snakeheadleft.png";
 
     /**
      * Snake head looking right path.
      */
-    public static final String SNAKE_HEAD_RIGHT_PATH = "tile.png";
+    public static final String SNAKE_HEAD_RIGHT_PATH = "snakeheadright.png";
 
     /**
      * Snake body horizontal path.
      */
-    public static final String SNAKE_BODY_HORIZONTAL_PATH = "tile.png";
+    public static final String SNAKE_BODY_HORIZONTAL_PATH = "snakebodyhorizontal.png";
 
     /**
      * Snake body vertical path.
      */
-    public static final String SNAKE_BODY_VERTICAL_PATH = "tile.png";
+    public static final String SNAKE_BODY_VERTICAL_PATH = "snakebodyvertical.png";
+
+    /**
+     * Snake body up right path.
+     */
+    public static final String SNAKE_BODY_UP_RIGHT_PATH = "snakeicon.png";
+
+    /**
+     * Snake body right down path.
+     */
+    public static final String SNAKE_BODY_RIGHT_DOWN_PATH = "snakebodyrightdown.png";
+
+    /**
+     * Snake body down left path.
+     */
+    public static final String SNAKE_BODY_DOWN_LEFT_PATH = "snakeicon.png";
+
+    /**
+     * Snake body left up path.
+     */
+    public static final String SNAKE_BODY_LEFT_UP_PATH = "snakeicon.png";
 
     /**
      * Snake tail looking up path.
      */
-    public static final String SNAKE_TAIL_UP_PATH = "tile.png";
+    public static final String SNAKE_TAIL_UP_PATH = "snaketailup.png";
 
     /**
      * Snake tail looking down path.
      */
-    public static final String SNAKE_TAIL_DOWN_PATH = "tile.png";
+    public static final String SNAKE_TAIL_DOWN_PATH = "snaketaildown.png";
 
     /**
      * Snake tail looking left path.
      */
-    public static final String SNAKE_TAIL_LEFT_PATH = "tile.png";
+    public static final String SNAKE_TAIL_LEFT_PATH = "snaketailleft.png";
 
     /**
      * Snake tail looking right path.
      */
-    public static final String SNAKE_TAIL_RIGHT_PATH = "tile.png";
+    public static final String SNAKE_TAIL_RIGHT_PATH = "snaketailright.png";
+
+    public static final int MOVE_DELAY = 100;
 }

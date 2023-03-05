@@ -1,8 +1,13 @@
+package Components;
+
 import java.awt.Graphics;
 import java.awt.Image;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+
+import main.SnakeConst;
+import main.component;
 
 public class backgroundComp extends JFrame implements component, SnakeConst{
 

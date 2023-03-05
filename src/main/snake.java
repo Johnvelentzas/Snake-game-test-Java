@@ -1,3 +1,4 @@
+package main;
 import javax.swing.*;
 
 public class snake implements SnakeConst, WindowConstants{

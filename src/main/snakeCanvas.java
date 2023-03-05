@@ -1,8 +1,13 @@
+package main;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 
 import javax.swing.*;
+
+import Components.*;
+import geometry.*;
+import geometry.Point;
 
 public class snakeCanvas extends JPanel implements ActionListener, KeyListener, SnakeConst {
 
@@ -10,11 +15,20 @@ public class snakeCanvas extends JPanel implements ActionListener, KeyListener, 
 
     private ArrayList<component> components = new ArrayList<>();
 
+    private KeyListener controllComp;
+
+    private snakeComp snake1;
+
     snakeCanvas(){
         this.setPreferredSize(new Dimension(CANVAS_WIDTH, CANVAS_HEIGHT));
         this.setBackground(Color.BLACK);
         this.setDoubleBuffered(true);
         this.components.add(new backgroundComp());
+        this.snake1 = new snakeComp(new Point(10, 4), direction.UP);
+        this.components.add(this.snake1);
+        this.controllComp = this.snake1;
+        this.setFocusable(true);
+        this.requestFocusInWindow();
     }
 
     public void start(){
@@ -47,19 +61,16 @@ public class snakeCanvas extends JPanel implements ActionListener, KeyListener, 
 
     @Override
     public void keyTyped(KeyEvent e) {
-        // TODO Auto-generated method stub
-        
+        this.controllComp.keyTyped(e);
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-        // TODO Auto-generated method stub
-        
+        this.controllComp.keyPressed(e);
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        // TODO Auto-generated method stub
-        
+        this.controllComp.keyReleased(e);
     }
 }
