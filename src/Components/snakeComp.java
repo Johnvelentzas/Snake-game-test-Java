@@ -11,10 +11,9 @@ import javax.swing.JFrame;
 
 import geometry.Point;
 import geometry.direction;
-import main.SnakeConst;
 import main.component;
 
-public class snakeComp extends JFrame implements component, SnakeConst, KeyListener {
+public class snakeComp extends JFrame implements component, KeyListener {
 
     private Image headUp = new ImageIcon(MEDIA_PATH + SNAKE_HEAD_UP_PATH).getImage().getScaledInstance(TILE_SIZE, TILE_SIZE, Image.SCALE_DEFAULT);
     private Image headDown = new ImageIcon(MEDIA_PATH + SNAKE_HEAD_DOWN_PATH).getImage().getScaledInstance(TILE_SIZE, TILE_SIZE, Image.SCALE_DEFAULT);
@@ -39,14 +38,6 @@ public class snakeComp extends JFrame implements component, SnakeConst, KeyListe
     direction headDir = direction.UP;
 
     int delay = 0;
-
-    private int getPrintX(Point point){
-        return point.x() * TILE_SIZE;
-    }
-
-    private int getPrintY(Point point){
-        return (SCREEN_ROW - point.y()) * TILE_SIZE;
-    }
 
     public snakeComp(Point head, direction dir){
         this.body.add(head);
@@ -75,7 +66,19 @@ public class snakeComp extends JFrame implements component, SnakeConst, KeyListe
         this.delay++;
         if (this.delay > MOVE_DELAY) {
             this.delay = 0;
-            
+            switch (this.headDir) {
+                case DOWN:
+                    break;
+                case LEFT:
+                    break;
+                case RIGHT:
+                    break;
+                case UP:
+                    break;
+                default:
+                    break;
+
+            }
         }
     }
 
@@ -94,7 +97,7 @@ public class snakeComp extends JFrame implements component, SnakeConst, KeyListe
         if (this.headDir == direction.LEFT) {
             snakeImage = this.headLeft;
         }
-        g.drawImage(snakeImage, getPrintX(this.body.get(0)), getPrintY(this.body.get(0)), this);
+        g.drawImage(snakeImage, component.getPrintX(this.body.get(0)), component.getPrintY(this.body.get(0)), this);
         for (int i = 1; i < this.body.size() - 1; i++) {
             Point prev = this.body.get(i - 1);
             Point curr = this.body.get(i);
@@ -118,7 +121,7 @@ public class snakeComp extends JFrame implements component, SnakeConst, KeyListe
             if ((prev.equals(curr.Left()) && next.equals(curr.Up())) || (prev.equals(curr.Up()) && next.equals(curr.Left()))) {
                 snakeImage = this.bodyLeftUp;
             }
-            g.drawImage(snakeImage, getPrintX(this.body.get(i)), getPrintY(this.body.get(i)), this);
+            g.drawImage(snakeImage, component.getPrintX(this.body.get(i)), component.getPrintY(this.body.get(i)), this);
         }
         Point prev = this.body.get(this.body.size() - 2);
         Point last = this.body.get(this.body.size() - 1);
@@ -135,7 +138,7 @@ public class snakeComp extends JFrame implements component, SnakeConst, KeyListe
         if (prev.equals(last.Left())) {
             snakeImage = this.tailLeft;
         }
-        g.drawImage(snakeImage, getPrintX(this.body.get(this.body.size() - 1)), getPrintY(this.body.get(this.body.size() - 1)), this);
+        g.drawImage(snakeImage, component.getPrintX(this.body.get(this.body.size() - 1)), component.getPrintY(this.body.get(this.body.size() - 1)), this);
     }
 
     @Override
