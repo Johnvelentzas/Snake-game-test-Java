@@ -10,7 +10,7 @@ import main.component;
 
 public abstract class collectiblesComp extends JFrame implements component{
 
-    private Image icon;
+    protected Image icon;
     private Point coords;
 
     public collectiblesComp(Point point){

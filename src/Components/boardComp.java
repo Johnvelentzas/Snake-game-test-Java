@@ -8,18 +8,26 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 import geometry.Point;
-import main.SnakeConst;
 import main.component;
 
-public class boardComp extends JFrame implements component, SnakeConst{
+public class boardComp extends JFrame implements component{
 
     private Image tileImage = new ImageIcon(MEDIA_PATH + BACKGROUND_ICON_PATH).getImage().getScaledInstance(TILE_SIZE, TILE_SIZE, Image.SCALE_DEFAULT);
 
-    private snakeComp snake;
-    private ArrayList<Point> apples;
+    private ArrayList<Point> apples = new ArrayList<>();
 
-    public void addSnake(snakeComp snake){
-        this.snake = snake;
+    public Boolean eatApple(Point head){
+        for (Point apple : apples) {
+            if (apple.equals(head)) {
+                this.apples.remove(apple);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean canGo(Point point){
+        return true;
     }
 
     @Override

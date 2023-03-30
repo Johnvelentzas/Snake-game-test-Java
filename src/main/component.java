@@ -1,7 +1,9 @@
 package main;
-import java.awt.*;
+
+import java.awt.Graphics;
 
 import geometry.Point;
+import main.component;
 
 public interface component extends SnakeConst {
     public void update();

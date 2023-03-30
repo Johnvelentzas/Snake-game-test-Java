@@ -92,7 +92,7 @@ public interface SnakeConst {
     /**
      * Snake body up right path.
      */
-    public static final String SNAKE_BODY_UP_RIGHT_PATH = "snakeicon.png";
+    public static final String SNAKE_BODY_UP_RIGHT_PATH = "snakebodyupright.png";
 
     /**
      * Snake body right down path.
@@ -102,12 +102,12 @@ public interface SnakeConst {
     /**
      * Snake body down left path.
      */
-    public static final String SNAKE_BODY_DOWN_LEFT_PATH = "snakeicon.png";
+    public static final String SNAKE_BODY_DOWN_LEFT_PATH = "snakebodydownleft.png";
 
     /**
      * Snake body left up path.
      */
-    public static final String SNAKE_BODY_LEFT_UP_PATH = "snakeicon.png";
+    public static final String SNAKE_BODY_LEFT_UP_PATH = "snakebodyleftup.png";
 
     /**
      * Snake tail looking up path.
@@ -129,5 +129,11 @@ public interface SnakeConst {
      */
     public static final String SNAKE_TAIL_RIGHT_PATH = "snaketailright.png";
 
-    public static final int MOVE_DELAY = 100;
+
+    /**
+     * Apple path.
+     */
+    public static final String APPLE_PATH = "apple.png";
+
+    public static final int MOVE_DELAY = 2;
 }

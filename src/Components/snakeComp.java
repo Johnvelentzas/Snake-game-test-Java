@@ -1,6 +1,5 @@
 package Components;
 
-import java.awt.event.*;
 import java.util.ArrayList;
 
 import java.awt.Graphics;
@@ -13,7 +12,7 @@ import geometry.Point;
 import geometry.direction;
 import main.component;
 
-public class snakeComp extends JFrame implements component, KeyListener {
+public class snakeComp extends JFrame implements component{
 
     private Image headUp = new ImageIcon(MEDIA_PATH + SNAKE_HEAD_UP_PATH).getImage().getScaledInstance(TILE_SIZE, TILE_SIZE, Image.SCALE_DEFAULT);
     private Image headDown = new ImageIcon(MEDIA_PATH + SNAKE_HEAD_DOWN_PATH).getImage().getScaledInstance(TILE_SIZE, TILE_SIZE, Image.SCALE_DEFAULT);
@@ -36,10 +35,13 @@ public class snakeComp extends JFrame implements component, KeyListener {
     int size = 3;
     ArrayList<Point> body = new ArrayList<>();
     direction headDir = direction.UP;
+    direction moveDir = direction.UP;
+    boardComp board;
 
     int delay = 0;
 
-    public snakeComp(Point head, direction dir){
+    public snakeComp(Point head, direction dir, boardComp board){
+        this.board = board;
         this.body.add(head);
         this.headDir = dir;
         for (int i = 0; i < this.size - 1; i++) {
@@ -61,19 +63,80 @@ public class snakeComp extends JFrame implements component, KeyListener {
         }
     }
 
+    private void moveUp(){
+        if (this.board.canGo(this.body.get(0).Up())) {
+            this.body.remove(this.body.size() - 1);
+            this.body.add(0, this.body.get(0).Up());
+        }
+        if (this.board.eatApple(this.body.get(0))) {
+            
+        }
+    }
+
+    private void moveDown(){
+        if (this.board.canGo(this.body.get(0).Down())) {
+            this.body.remove(this.body.size() - 1);
+            this.body.add(0, this.body.get(0).Down());
+        }
+        if (this.board.eatApple(this.body.get(0))) {
+            
+        }
+    }
+
+    private void moveRight(){
+        if (this.board.canGo(this.body.get(0).Right())) {
+            this.body.remove(this.body.size() - 1);
+            this.body.add(0, this.body.get(0).Right());
+        }
+        if (this.board.eatApple(this.body.get(0))) {
+            
+        }
+    }
+
+    private void moveLeft(){
+        if (this.board.canGo(this.body.get(0).Left())) {
+            this.body.remove(this.body.size() - 1);
+            this.body.add(0, this.body.get(0).Left());
+        }
+        if (this.board.eatApple(this.body.get(0))) {
+            
+        }
+    }
+
+    public void lookUp(){
+        this.moveDir = direction.UP;
+    }
+
+    public void lookDown(){
+        this.moveDir = direction.DOWN;
+    }
+
+    public void lookRight(){
+        this.moveDir = direction.RIGHT;
+    }
+
+    public void lookLeft(){
+        this.moveDir = direction.LEFT;
+    }
+
     @Override
     public void update() {
         this.delay++;
         if (this.delay > MOVE_DELAY) {
             this.delay = 0;
-            switch (this.headDir) {
+            this.headDir = moveDir;
+            switch (this.moveDir) {
                 case DOWN:
+                    this.moveDown();
                     break;
                 case LEFT:
+                    this.moveLeft();
                     break;
                 case RIGHT:
+                    this.moveRight();
                     break;
                 case UP:
+                    this.moveUp();
                     break;
                 default:
                     break;
@@ -140,22 +203,4 @@ public class snakeComp extends JFrame implements component, KeyListener {
         }
         g.drawImage(snakeImage, component.getPrintX(this.body.get(this.body.size() - 1)), component.getPrintY(this.body.get(this.body.size() - 1)), this);
     }
-
-    @Override
-    public void keyTyped(KeyEvent e) {
-
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'keyPressed'");
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'keyReleased'");
-    }
-    
 }
